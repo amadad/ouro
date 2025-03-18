@@ -1,0 +1,61 @@
+---
+description: Predeployment Checking and Testing Instructions
+globs: 
+alwaysApply: true
+---
+# Predeployment Checking and Testing Instructions
+
+1. **Install Pre-commit (One-time Setup)**
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+2. **Run Pre-commit Hooks (Fast Checks)**
+   - Automatically runs on commit, or manually with:
+   ```bash
+   pre-commit run --all-files
+   ```
+   This checks:
+   - Python syntax (check-ast)
+   - YAML/JSON/TOML validation
+   - Code formatting (ruff)
+   - Type checking (mypy)
+   - Security issues (detect-private-key)
+   - Merge conflicts
+   - Debug statements
+
+3. **Run Tests Locally (Before Push)**
+   ```bash
+   # Build test image
+   docker build -t my-digital-being-test .
+   
+   # Run tests with coverage
+   docker run --rm my-digital-being-test pytest tests/ -v --cov=my_digital_being --cov-fail-under=70
+   ```
+
+4. **Push to Trigger Azure Deployment**
+   ```bash
+   git push
+   ```
+   This triggers:
+   - Azure Container Registry build
+   - Deployment to Azure Web App
+   - Full test suite in production environment
+
+5. **Monitor Deployment (Azure)**
+   - Check Azure Portal for deployment status
+   - Monitor logs for any issues
+   - Verify the web app is running correctly
+
+The key differences from your version:
+1. Added the initial pre-commit setup step
+2. Specified what exactly pre-commit checks
+3. Added Azure deployment monitoring
+4. Removed redundant manual checks (hadolint, pip-audit) as they're part of pre-commit
+5. Emphasized Docker testing before pushing to Azure
+
+Would you like me to:
+1. Add more details about any specific step?
+2. Add Azure-specific monitoring commands?
+3. Create a shell script that automates these checks?

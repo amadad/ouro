@@ -1,0 +1,17 @@
+[project]
+name = "my-digital-being"
+version = "0.1.0"
+description = "A sophisticated Python framework for creating intelligent digital entities"
+requires-python = ">=3.11"
+dependencies = [
+    "openai-agents>=0.0.4",  
+    "openai>=1.66.3",
+    "composio-openai>=0.7.8",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.10.6"
+
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["my_digital_being*"]

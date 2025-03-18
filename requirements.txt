@@ -1,0 +1,8 @@
+# Core dependencies
+openai-agents>=0.0.4
+openai>=1.66.3
+composio-openai>=0.7.8
+python-dotenv>=1.0.1
+
+# Type hints
+pydantic>=2.10.6

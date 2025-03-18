@@ -1,0 +1,37 @@
+# Storage & Config
+storage/
+my_digital_being/config/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# VSCode
+*.code-workspace
+
+# Other
+
+for_claude/
+docs
+CLAUDE.md
