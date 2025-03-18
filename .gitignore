@@ -35,3 +35,4 @@ env/
 for_claude/
 docs
 CLAUDE.md
+.DS_Store
